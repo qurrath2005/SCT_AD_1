@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Custom attributes for calculator buttons -->
+    <attr name="numberButtonColor" format="color" />
+    <attr name="operationButtonColor" format="color" />
+    <attr name="equalsButtonColor" format="color" />
+    <attr name="clearButtonColor" format="color" />
+    <attr name="scientificButtonColor" format="color" />
+</resources>

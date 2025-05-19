@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Smart Calculator</h1>
+            <div class="header-actions">
+                <button id="historyBtn" class="icon-button" title="History">
+                    <span class="material-icons">history</span>
+                </button>
+                <button id="themeToggleBtn" class="icon-button" title="Toggle Theme">
+                    <span class="material-icons">dark_mode</span>
+                </button>
+                <button id="voiceInputBtn" class="icon-button" title="Voice Input">
+                    <span class="material-icons">mic</span>
+                </button>
+            </div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-tab="calculator">Calculator</button>
+            <button class="tab-button" data-tab="converter">Converter</button>
+        </div>
+
+        <main>
+            <!-- Calculator Tab -->
+            <div id="calculator" class="tab-content active">
+                <div class="display">
+                    <div id="expression" class="expression"></div>
+                    <div id="result" class="result">0</div>
+                </div>
+
+                <div class="calculator-mode-toggle">
+                    <button id="basicModeBtn" class="mode-button active">Basic</button>
+                    <button id="scientificModeBtn" class="mode-button">Scientific</button>
+                </div>
+
+                <div id="scientificKeypad" class="scientific-keypad">
+                    <button class="calc-button function" data-value="sin">sin</button>
+                    <button class="calc-button function" data-value="cos">cos</button>
+                    <button class="calc-button function" data-value="tan">tan</button>
+                    <button class="calc-button function" data-value="log">log</button>
+                    <button class="calc-button function" data-value="ln">ln</button>
+                    <button class="calc-button function" data-value="sqrt">√</button>
+                    <button class="calc-button function" data-value="^">^</button>
+                    <button class="calc-button constant" data-value="π">π</button>
+                    <button class="calc-button constant" data-value="e">e</button>
+                    <button class="calc-button function" data-value="%">%</button>
+                </div>
+
+                <div class="keypad">
+                    <button class="calc-button clear" data-value="C">C</button>
+                    <button class="calc-button clear-all" data-value="AC">AC</button>
+                    <button class="calc-button operator" data-value="(">(</button>
+                    <button class="calc-button operator" data-value=")">)</button>
+                    
+                    <button class="calc-button number" data-value="7">7</button>
+                    <button class="calc-button number" data-value="8">8</button>
+                    <button class="calc-button number" data-value="9">9</button>
+                    <button class="calc-button operator" data-value="÷">÷</button>
+                    
+                    <button class="calc-button number" data-value="4">4</button>
+                    <button class="calc-button number" data-value="5">5</button>
+                    <button class="calc-button number" data-value="6">6</button>
+                    <button class="calc-button operator" data-value="×">×</button>
+                    
+                    <button class="calc-button number" data-value="1">1</button>
+                    <button class="calc-button number" data-value="2">2</button>
+                    <button class="calc-button number" data-value="3">3</button>
+                    <button class="calc-button operator" data-value="-">-</button>
+                    
+                    <button class="calc-button number" data-value="0">0</button>
+                    <button class="calc-button decimal" data-value=".">.</button>
+                    <button class="calc-button equals" data-value="=">=</button>
+                    <button class="calc-button operator" data-value="+">+</button>
+                </div>
+            </div>
+
+            <!-- Converter Tab -->
+            <div id="converter" class="tab-content">
+                <div class="converter-container">
+                    <div class="converter-type-selector">
+                        <select id="converterType">
+                            <option value="currency">Currency</option>
+                            <option value="length">Length</option>
+                            <option value="weight">Weight</option>
+                            <option value="temperature">Temperature</option>
+                        </select>
+                    </div>
+                    
+                    <div class="converter-input">
+                        <input type="number" id="converterValue" placeholder="Enter value">
+                        
+                        <div class="converter-units">
+                            <div class="unit-selector">
+                                <label for="fromUnit">From:</label>
+                                <select id="fromUnit"></select>
+                            </div>
+                            
+                            <div class="unit-selector">
+                                <label for="toUnit">To:</label>
+                                <select id="toUnit"></select>
+                            </div>
+                        </div>
+                        
+                        <button id="convertBtn" class="convert-button">Convert</button>
+                    </div>
+                    
+                    <div class="converter-result">
+                        <div class="result-label">Result:</div>
+                        <div id="conversionResult" class="result-value">-</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- History Panel (Hidden by default) -->
+        <div id="historyPanel" class="history-panel">
+            <div class="history-header">
+                <h2>Calculation History</h2>
+                <button id="closeHistoryBtn" class="icon-button">
+                    <span class="material-icons">close</span>
+                </button>
+            </div>
+            
+            <div id="historyList" class="history-list">
+                <!-- History items will be added here dynamically -->
+                <div class="empty-history">No calculations yet</div>
+            </div>
+            
+            <div class="history-actions">
+                <button id="exportHistoryBtn" class="history-button">Export</button>
+                <button id="clearHistoryBtn" class="history-button">Clear All</button>
+            </div>
+        </div>
+
+        <!-- Voice Input Modal (Hidden by default) -->
+        <div id="voiceModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Voice Input</h2>
+                    <button id="closeVoiceModalBtn" class="icon-button">
+                        <span class="material-icons">close</span>
+                    </button>
+                </div>
+                
+                <div class="modal-body">
+                    <div class="voice-status">
+                        <div id="voiceStatus">Speak now...</div>
+                        <div class="voice-animation">
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                        </div>
+                    </div>
+                    
+                    <div id="voiceResult" class="voice-result"></div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button id="startVoiceBtn" class="voice-button">Start Listening</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

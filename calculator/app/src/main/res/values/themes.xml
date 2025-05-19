@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Theme (Default) -->
+    <style name="Theme.SmartCalculator" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_variant</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondary_variant</item>
+        
+        <item name="android:colorBackground">@color/background_light</item>
+        <item name="colorSurface">@color/surface_light</item>
+        <item name="colorError">@color/error_light</item>
+        
+        <item name="colorOnPrimary">@color/on_primary_light</item>
+        <item name="colorOnSecondary">@color/on_secondary_light</item>
+        <item name="colorOnBackground">@color/on_background_light</item>
+        <item name="colorOnSurface">@color/on_surface_light</item>
+        <item name="colorOnError">@color/on_error_light</item>
+        
+        <item name="android:statusBarColor">@color/primary_variant</item>
+        
+        <!-- Calculator specific colors -->
+        <item name="numberButtonColor">@color/number_button_light</item>
+        <item name="operationButtonColor">@color/operation_button_light</item>
+        <item name="equalsButtonColor">@color/equals_button</item>
+        <item name="clearButtonColor">@color/clear_button_light</item>
+        <item name="scientificButtonColor">@color/scientific_button_light</item>
+    </style>
+</resources>

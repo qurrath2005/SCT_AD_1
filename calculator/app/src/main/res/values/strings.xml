@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Smart Calculator</string>
+    
+    <!-- Calculator buttons -->
+    <string name="btn_0">0</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="btn_9">9</string>
+    <string name="btn_add">+</string>
+    <string name="btn_subtract">-</string>
+    <string name="btn_multiply">×</string>
+    <string name="btn_divide">÷</string>
+    <string name="btn_equals">=</string>
+    <string name="btn_clear">C</string>
+    <string name="btn_clear_all">AC</string>
+    <string name="btn_decimal">.</string>
+    <string name="btn_percent">%</string>
+    <string name="btn_parenthesis_open">(</string>
+    <string name="btn_parenthesis_close">)</string>
+    
+    <!-- Scientific calculator buttons -->
+    <string name="btn_sin">sin</string>
+    <string name="btn_cos">cos</string>
+    <string name="btn_tan">tan</string>
+    <string name="btn_log">log</string>
+    <string name="btn_ln">ln</string>
+    <string name="btn_sqrt">√</string>
+    <string name="btn_power">^</string>
+    <string name="btn_pi">π</string>
+    <string name="btn_e">e</string>
+    
+    <!-- Menu items -->
+    <string name="menu_history">History</string>
+    <string name="menu_theme">Theme</string>
+    <string name="menu_scientific">Scientific</string>
+    <string name="menu_basic">Basic</string>
+    <string name="menu_voice">Voice Input</string>
+    <string name="menu_converter">Converter</string>
+    
+    <!-- Voice input -->
+    <string name="voice_hint">Speak now…</string>
+    <string name="voice_error">Could not recognize speech</string>
+    <string name="voice_permission_required">Microphone permission is required for voice input</string>
+    
+    <!-- History -->
+    <string name="history_title">Calculation History</string>
+    <string name="history_empty">No calculations yet</string>
+    <string name="history_export">Export</string>
+    <string name="history_clear">Clear All</string>
+    <string name="history_export_success">History exported successfully</string>
+    <string name="history_export_error">Failed to export history</string>
+    
+    <!-- Converter -->
+    <string name="converter_currency">Currency</string>
+    <string name="converter_length">Length</string>
+    <string name="converter_weight">Weight</string>
+    <string name="converter_temperature">Temperature</string>
+    <string name="converter_from">From</string>
+    <string name="converter_to">To</string>
+    <string name="converter_convert">Convert</string>
+</resources>
